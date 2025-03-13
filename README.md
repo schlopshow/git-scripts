@@ -28,7 +28,7 @@ mv * ~/.local/bin
 ```
 change the ```mv * ~/.local/bin``` command to whatever folder you use with your $PATH.
 
-## TO-DOLIST
+## TO-DO-LIST
 
 - I should add scripts for when you want to add only specific files, since doing add . doesn't work all the time, and might cause merge conflicts so you want a finer control.
 
