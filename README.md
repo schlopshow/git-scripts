@@ -22,10 +22,11 @@ Collection of scripts created by Schlop to automate Git task via command line.
 This is in pseduo code because its up to you to determine where your $PATH variable, bascially just move them there and then you can use them by simply typing the name of the script.
 
 ```sh
-git clone "repo"
-cd "repo"
-mv * ~/.local/bin or wherver you may put scripts that are in your PATH variable.
+git clone https://github.com/schlopshow/git-scripts.git
+cd git-scripts
+mv * ~/.local/bin
 ```
+can the mv * command to whatever folder you use with your $PATH.
 
 ## TO-DOLIST
 
