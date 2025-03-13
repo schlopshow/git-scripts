@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Enter Commit Message: "
+read CommitMessage
+echo "Enter branch"
+read GitBranch
+
+git add .
+git commit -m "$CommitMessage"
+git push origin "$GitBranch"

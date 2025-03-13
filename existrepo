@@ -1,0 +1,28 @@
+#!/bin/sh
+# Created by Schlop March 13th 2025
+
+# Ensure we're in a Git repository
+if [ ! -d ".git" ]; then
+    echo "This is not a Git repository. Initializing repository..."
+    git init
+    git add .
+    git commit -m "Initial commit"
+fi
+
+echo "Enter your GitHub repository URL (e.g., https://github.com/username/repo.git):"
+read GitID
+
+# Check if the remote already exists
+if git remote get-url origin >/dev/null 2>&1; then
+    echo "Remote origin already exists. Updating URL..."
+    git remote set-url origin "$GitID"
+else
+    echo "Adding remote origin..."
+    git remote add origin "$GitID"
+fi
+
+# Ensure we're on the main branch
+git branch -M main
+
+# Push to GitHub
+git push -u origin main

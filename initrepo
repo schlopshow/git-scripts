@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "Enter your GitHub repository URL (e.g., https://github.com/username/repo.git):"
+read githubID
+echo "Enter a commit message"
+read commitMessage
+echo "$commitMessage" > README.md
+
+git init
+git add README.md
+git commit -m "$commitMessage"
+
+git branch -M main
+git remote add origin "$githubID"
+git push -u origin main
