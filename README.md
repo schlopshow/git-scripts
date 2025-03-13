@@ -26,7 +26,7 @@ git clone https://github.com/schlopshow/git-scripts.git
 cd git-scripts
 mv * ~/.local/bin
 ```
-can the ```mv * ~/.local/bin``` command to whatever folder you use with your $PATH.
+change the ```mv * ~/.local/bin``` command to whatever folder you use with your $PATH.
 
 ## TO-DOLIST
 
