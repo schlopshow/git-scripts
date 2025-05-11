@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Create an array from the output of the ls command
+cd git-scripts
+files=($(ls))
+
+# Iterate over the array and remove each file
+for file in "${files[@]}"; do
+    rm -f ~/.local/bin/"$file"
+done
+
+echo "Old scripts have been removed, new scripts will be added"
+
+rm README.md
+mv * ~/.local/bin
+rm ~/.local/bin/install
