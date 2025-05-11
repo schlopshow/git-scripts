@@ -1,0 +1,6 @@
+#!/bin/sh
+# This doesn't work fully automatically have to add a way to read the output of git log to get the COMMIT_HASH
+git log
+echo "Input the Commit Hash you want to reset to"
+read COMMIT_HASH
+git reset --hard $COMMIT_HASH
