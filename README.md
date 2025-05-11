@@ -24,6 +24,7 @@ This is in pseduo code because its up to you to determine where your $PATH varia
 ```sh
 git clone https://github.com/schlopshow/git-scripts.git
 cd git-scripts
+rm README.md
 mv * ~/.local/bin
 ```
 change the ```mv * ~/.local/bin``` command to whatever folder you use with your $PATH.
