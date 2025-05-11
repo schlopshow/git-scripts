@@ -4,7 +4,7 @@
 cd git-scripts || { echo "Directory git-scripts not found"; exit 1; }
 
 # Create an array from the output of the ls command, excluding README.md and the install script
-files=($(ls | grep -v -e 'README.md' -e 'install.sh'))
+files=($(ls | grep -v -e 'README.md' -e 'install'))
 
 # Remove old scripts from ~/.local/bin
 for file in "${files[@]}"; do
