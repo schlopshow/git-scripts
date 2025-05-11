@@ -1,16 +1,19 @@
-#!/bin/bash
+#!/bin/sh
 
-# Create an array from the output of the ls command
-cd git-scripts
-files=($(ls))
+# Change to the directory containing the scripts
+cd git-scripts || { echo "Directory git-scripts not found"; exit 1; }
 
-# Iterate over the array and remove each file
+# Create an array from the output of the ls command, excluding README.md and the install script
+files=($(ls | grep -v -e 'README.md' -e 'install.sh'))
+
+# Remove old scripts from ~/.local/bin
 for file in "${files[@]}"; do
     rm -f ~/.local/bin/"$file"
 done
 
 echo "Old scripts have been removed, new scripts will be added"
 
-rm README.md
-mv * ~/.local/bin
-rm ~/.local/bin/install
+# Copy new scripts to ~/.local/bin
+cp "${files[@]}" ~/.local/bin
+
+echo "New scripts have been added to ~/.local/bin"
